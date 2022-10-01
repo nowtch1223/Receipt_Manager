@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="width=device-width initial-scale=1.0 minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" name="viewport">
+<meta charset="utf-8">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+<link rel="stylesheet" href="https://lightbox.sakura.ne.jp/demo/two-section.css">
+<script src="https://lightbox.sakura.ne.jp/demo/number-format.js"></script>
+
+<script>
+
+$(function(){
+	$("#fire_reader").on("change", function(){
+
+		// テーブルのクリア
+		$("#tbl").html("");
+
+		// multiple でなければループは一回だけ
+		for( i = 0; i < this.files.length; i++ ) {
+
+			// FileReader は毎回作成(同時に複数のファイルを扱えない)
+			var reader = new FileReader();
+
+			// FileReader にデータが読み込まれた時のイベント
+			var rows = "";
+			var cols = "";
+			var tr = null;
+			$(reader).on("load", function () {
+
+				// \r を全て削除
+				var data = this.result.replace(/\r/g,"");
+
+				// \n で行を分ける
+				rows = this.result.split("\n");
+				$.each( rows, function( idx, value ){
+					// 空行を無視
+					if ( value == "" ) {
+						return;
+					}
+					cols = value.split(",");
+					// 行を作成
+					tr = $("<tr></tr>").appendTo("#tbl");
+					$.each( cols, function( idx, value ){
+						// TD を追加して、テキストをセット
+
+						switch( idx ) {
+							case 7:
+							case 8:
+								// 数値項目はカンマ編集で右寄せ
+								$("<td></td>").appendTo(tr)
+									.text(value.number_format())
+									.css({"text-align": "right" });
+								break;
+
+							default:
+								$("<td></td>").appendTo(tr)
+									.text(value);
+						}
+
+					} )
+				} )
+			});
+            
+			// 上記イベントを発動するための処理( this.files[i] は blob )
+			if (this.files[i]) {
+				// CSV は通常 shift_jis なので、指定します
+				reader.readAsText(this.files[i],"shift_jis");
+			}
+		}
+	});
+
+	// **************************************
+	// このページ自身の QRコードの表示
+	// **************************************
+	// $('#qrcode')
+	// 	.css({ "margin" : "20px 20px 20px 20px" })
+	// 	.qrcode({width: 160,height: 160,text: location.href });
+
+});
+
+</script>
+</head>
+<body>
+	<style>
+		.table {
+		width: 100%;
+		border-collapse: collapse;
+		text-align: left;
+		line-height: 1.5;
+		border: 1px solid #ccc;
+		font-size: 13px;
+		}
+		.table th {
+		padding: 10px;
+		font-weight: bold;
+		border-top: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		border-bottom: 2px solid #0099e3;
+		background: #cee7ff;
+		}
+
+		label {
+		/* ボタン部分の見た目（任意） */
+		display: inline-block;
+		position: relative;
+		background: #666;
+		color:#fff;
+		font-size: 16px;
+		padding: 10px 18px;
+		border-radius: 4px;
+		transition: all 0.3s;
+		}
+		label:hover {
+		background: #888;
+		transition: all 0.4s;
+		}
+		label input {
+		/* 今回のポイント */
+		position: absolute;
+		left:0;
+		top:0;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		}
+		.filename {
+		font-weight: 16px;
+		margin:0 0 0 10px;
+		}
+	</style>
+
+
+
+	<div id="head">
+		<label>
+			<input type="file" id="fire_reader" name="fire_reader">CSVデータを選択してください
+		</label>
+		
+	</div>
+
+	<div id="extend">
+		<table class="table">
+		<tbody>
+      <tr>
+        <th>日付</th>
+        <th>商品名</th>
+        <th>値段</th>
+      </tr>
+		</tbody>
+        
+    <tbody id="tbl">
+		</tbody>
+		</table>
+
+		<div id="qrcode"></div>
+	</div>
+</body>
+</html>
+{% endblock %}

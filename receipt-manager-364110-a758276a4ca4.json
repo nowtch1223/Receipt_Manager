@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "receipt-manager-364110",
+  "private_key_id": "a758276a4ca43669ad0eb0998256e61b4e93f2c0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCfyiVFm8UdWyuU\n10oEgCRCHCz2EC3H4BRKUByoqPlxpjK0kOkxXR5NJKEPlk7JI+xlQCsTgNORGpsU\nwov23mMw56PsdKPt8w3WCactRPcJ4ojNDJu6ESpfQh0NUN9f+rH1IfPojAz0CRq7\nBhLlzC3iM44GTc6UhP+vm8pTrzSO8I4N+jgG5Ih5N3rCbnoYR+aCR5+ZHwR963Oz\nl4snnBEjv7XpAybz41lz5ZcQqssXaQj/n5hT/2nVeQKLJ9V+GG/VsD6MVk0qgFyk\nz+XinO6g/F/lExkgYdWREQdLkXyjoEeE5zbFQn5osXlGJqc/+zeo9OajZpNqpVkK\ncZEGhOZxAgMBAAECggEACZjOXYSGJZXX054NDuFj3BkdXa950mz7xv1SBVK1vZzL\n45KnAM0dEGjMaBdg1r2KuYeNtsOIYWkJyqjHF34Cktm8u4tDW7ua94GXqfVACZbS\nnM8erMGSbAt4W3gBnH398XE3OR6tOfxwf65VFPprAJCUXX5Pk5W71hAbKiTGGTYS\n4P0JIWUnO1KwJWTT6CvHk0IDfP+EEas98td8UW1uQx1VEukoEttMFVcWvFu2TqwT\nnw9tvpnVxL38XuDovNGuXnr1U0QV1rSFF6PJCJD01RaeJGtpWrv2XfFgay2KVMhc\nInmnnVf/A+fr28tCnBpSSGt7LaGFq5o/aa2NifrcSQKBgQDRR/tnszhIRd2zGrs8\nCe2TZPk6KfDeRRgFYPq8YctX0IfNIK62cDx4AmySV936C34BGjPmxoFWjt/xvVoz\nP0k3hgXf45jBGKVMJA0Oq7V4WXgXpecuyhcDlSnw2yJFT2WvRrPj4cTdQDvhac/Y\nJ52oIIkUh+aXPPwwW4jfYk0umQKBgQDDddEE1XBbtqT5goxvejL11q07Gf7nDKLn\njqv727WCWzyDyUQbkrE72q1908D6F+rIvBwbbwAezIEComNYVJYev6grzPbv2Cz6\nO66Lpjfln1zalMZrzZv9bYRzCt8IevBVilVuQPO9mj+cOHViI9t9rizXOuR1Tftu\nhfQBMI2VmQKBgDIvtNY1YDXUq0mcC3JmXxaNjEaqcBydLRl9HCO4v+6bDzXdtIgD\nejy9OBQQBidEQj85bWDWEYYUVRe/dLX9Yy1xck8yYRtNMbaEnqz5+FaX/fiNzFao\nF8TALIKZyioc1CGoLtNi/LaiBLoVicYoGeKLitPlkyKJeWCPUs9e32thAoGAB4NE\nyHHHws6vYqPA8Bv7T3Wz7Nyf7pOOw2W5eJHGVT9agRpAUur9gvZxyq9T8Ijwzkxk\nrC1FDOoBX2+Mb/24U3A8b4qOR0PA3tFicR2vclUAxaoIQmaBw2jtOVrGndXT3QXX\nKMi4VaZTIZcN8/q62gbS1GcAFv4rVuExMsaB+qkCgYEAzbJaKVk9vHNkQ3hV5wws\n6hCTIsAwZbPEzNSg0og7zCVpa8ZkDE7nry6QfMpZ0iV00tm8TxYul7MT/XJrysHz\ncXQsb5Q3fmG9UTvsqpuMv8icclszl95n07yqHqTPPqSy0Xa4rLD9vKBTcur5PMwH\nDCROGi58jGOQLshWmfeke/Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "shota-921@receipt-manager-364110.iam.gserviceaccount.com",
+  "client_id": "100422239437195637798",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/shota-921%40receipt-manager-364110.iam.gserviceaccount.com"
+}
